@@ -1,0 +1,47 @@
+package com.BITest;
+
+import com.rabbitmq.client.*;
+import java.io.IOException;
+
+
+public class Receiver {
+	 private static final String BROKER_URI = "amqp://lotos10:lotos10@10.2.4.33:42072";
+	private static final String QUEUE_NAME = "camelotQueue";
+public static void main(String[] args) throws Exception{
+	  ConnectionFactory factory = new ConnectionFactory();
+	  //set connection info
+	 /* factory.setUri(BROKER_URI);
+	  factory.useSslProtocol(); 
+	  
+	  //factory.setHost("http://10.202.188.134:31609"); 
+	 // factory.setUsername("lotos10");
+	  //factory.setPassword("lotos10");
+	  //create the connection
+*/	  
+	  
+      Connection connection = factory.newConnection();
+       
+      // create the channel
+      Channel channel = connection.createChannel();
+
+
+      channel.queueDeclare(QUEUE_NAME, false, false, false, null);
+      System.out.println(" [*] Consumer : waiting for messages. To exit press CTRL+C");
+
+/*	Consumer consumer = new DefaultConsumer(channel) {
+	  @Override
+	  public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, byte[] body)
+	      throws IOException {
+	    String message = new String(body, "UTF-8");
+	    System.out.println(" [x] Received '" + message + "'");
+	  }
+	};*/
+	//channel.basicConsume(QUEUE_NAME, true, consumer);
+	}
+	protected ConnectionFactory createConnectionFactory() throws Exception {
+    ConnectionFactory factory = new ConnectionFactory();
+    factory.setUri(BROKER_URI);
+    factory.useSslProtocol(); // Note this, we'll get back to it soon...
+    return factory;
+}
+	}

@@ -1,0 +1,46 @@
+/**
+ * 
+ */
+/**
+ * @author Likhitha.Bathula
+ *
+ */
+package com.comptroller;
+
+import java.io.*;
+import java.io.FileInputStream;
+
+
+import org.apache.poi.hssf.usermodel.HSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class CompareExcels {
+	
+	File file1 = new File("C:\\Users\\Likhitha.batthula\\Desktop\\Comptroller Voucher documentation\\sec004_Contractual_Schedule.xlsx");
+	File file2 = new File("C:\\Users\\Likhitha.batthula\\Documents\\Comptrollersamples\\SEC004_Contractual.xlsx");
+	
+	    FileInputStream f1 = new FileInputStream(file1);
+		FileInputStream f2 = new FileInputStream(file2);
+		XSSFWorkbook workbook1 = new XSSFWorkbook(f1);
+		XSSFSheet sheet1 = workbook1.getSheetAt(0);
+		XSSFWorkbook workbook2 = new XSSFWorkbook(f2);
+		XSSFSheet sheet2 = workbook2.getSheetAt(0);
+
+		for (int i = 2; i<7; i++){
+		Row row1=sh1.getRow(i);
+		Cell cell1 = row1.getCell(6);
+		System.out.println(cell1);{
+		for (int j = 5; j<10; j++){
+		Row row2=sh2.getRow(j);
+		Cell cell2 = row2.getCell(26);
+		System.out.println(cell2);
+		if(cell1 == cell2){
+		System.out.println(“True”);
+		}else{
+		System.out.println(“False”);
+		}
+
+}

@@ -1,0 +1,22 @@
+package com.BITest;
+
+import com.rabbitmq.client.*;
+
+public class Sender {
+	  
+    private static final String QUEUE_NAME = "camelotQueue";
+    private static final String BROKER_URL = "amqp://lotos10:lotos10@10.100.146.95:30405";
+  
+    private ConnectionFactory factory = new ConnectionFactory();
+      
+    public void sendMessage(String text) throws Exception {
+        factory.setUri(BROKER_URL);
+        factory.useSslProtocol();
+          
+        Connection connection = factory.newConnection();
+        Channel channel = connection.createChannel();
+  
+        channel.queueDeclare(QUEUE_NAME, false, false, false, null);
+        channel.basicPublish("", QUEUE_NAME,  null, text.getBytes());
+    }
+}

@@ -1,0 +1,159 @@
+2018-07-16 14:26:36,969 INFO  [Broker-Config] (o.a.q.s.s.GenericStoreUpgrader) - Broker store has model version 6.0. Number of record(s) 19
+2018-07-16 14:26:37,295 INFO  [Broker-Config] (q.m.a.create) - [Broker] ATH-1001 : Create "passwordFile"
+2018-07-16 14:26:37,311 INFO  [Broker-Config] (q.m.p.create) - [Broker] PRT-1001 : Create "HTTP"
+2018-07-16 14:26:37,322 INFO  [Broker-Config] (q.m.p.create) - [Broker] PRT-1001 : Create "AMQP"
+2018-07-16 14:26:37,442 ERROR [Broker-Config] (o.a.q.s.m.AbstractConfiguredObject) - Failed to open object with name 'AMQP'.  Object will be put into ERROR state.
+java.lang.IllegalArgumentException: Cannot convert '${qpid.amqp_port}' into a int for attribute port (Cannot convert string '<your_port>' to an integer)
+	at org.apache.qpid.server.model.ConfiguredObjectMethodAttribute.convert(ConfiguredObjectMethodAttribute.java:72) ~[qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.model.AbstractConfiguredObject.automatedSetValue(AbstractConfiguredObject.java:413) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.model.AbstractConfiguredObject.resolveAutomatedAttribute(AbstractConfiguredObject.java:1205) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.model.AbstractConfiguredObject.onResolve(AbstractConfiguredObject.java:1159) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.model.AbstractConfiguredObject.doResolution(AbstractConfiguredObject.java:985) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.model.AbstractConfiguredObject$11.performAction(AbstractConfiguredObject.java:997) ~[qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.model.AbstractConfiguredObject.applyToChildren(AbstractConfiguredObject.java:1055) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.model.AbstractConfiguredObject.doResolution(AbstractConfiguredObject.java:987) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.model.AbstractConfiguredObject$1.execute(AbstractConfiguredObject.java:470) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.model.AbstractConfiguredObject$1.execute(AbstractConfiguredObject.java:460) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.model.AbstractConfiguredObject$2.execute(AbstractConfiguredObject.java:521) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.model.AbstractConfiguredObject$2.execute(AbstractConfiguredObject.java:514) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.configuration.updater.TaskExecutorImpl$TaskLoggingWrapper.execute(TaskExecutorImpl.java:270) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.configuration.updater.TaskExecutorImpl.submitWrappedTask(TaskExecutorImpl.java:154) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.configuration.updater.TaskExecutorImpl.submit(TaskExecutorImpl.java:142) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.model.AbstractConfiguredObject.doOnConfigThread(AbstractConfiguredObject.java:513) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.model.AbstractConfiguredObject.openAsync(AbstractConfiguredObject.java:459) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.model.AbstractSystemConfig.activate(AbstractSystemConfig.java:237) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+	at org.apache.qpid.server.model.AbstractConfiguredObject.attainState(AbstractConfiguredObject.java:1254) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.model.AbstractConfiguredObject.attainState(AbstractConfiguredObject.java:1233) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.model.AbstractConfiguredObject$8.onSuccess(AbstractConfiguredObject.java:868) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.model.AbstractConfiguredObject$8.onSuccess(AbstractConfiguredObject.java:862) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at com.google.common.util.concurrent.Futures$6.run(Futures.java:1319) [guava-18.0.jar:na]
+	at com.google.common.util.concurrent.MoreExecutors$DirectExecutor.execute(MoreExecutors.java:457) [guava-18.0.jar:na]
+	at com.google.common.util.concurrent.ExecutionList.executeListener(ExecutionList.java:156) [guava-18.0.jar:na]
+	at com.google.common.util.concurrent.ExecutionList.add(ExecutionList.java:101) [guava-18.0.jar:na]
+	at com.google.common.util.concurrent.AbstractFuture.addListener(AbstractFuture.java:170) [guava-18.0.jar:na]
+	at com.google.common.util.concurrent.Futures.addCallback(Futures.java:1322) [guava-18.0.jar:na]
+	at com.google.common.util.concurrent.Futures.addCallback(Futures.java:1258) [guava-18.0.jar:na]
+	at org.apache.qpid.server.model.AbstractConfiguredObject.doAttainState(AbstractConfiguredObject.java:861) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.model.AbstractConfiguredObject.access$300(AbstractConfiguredObject.java:78) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.model.AbstractConfiguredObject$1.execute(AbstractConfiguredObject.java:473) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.model.AbstractConfiguredObject$1.execute(AbstractConfiguredObject.java:460) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.model.AbstractConfiguredObject$2.execute(AbstractConfiguredObject.java:521) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.model.AbstractConfiguredObject$2.execute(AbstractConfiguredObject.java:514) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.configuration.updater.TaskExecutorImpl$TaskLoggingWrapper.execute(TaskExecutorImpl.java:270) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.configuration.updater.TaskExecutorImpl$CallableWrapper$1.run(TaskExecutorImpl.java:342) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at java.base/java.security.AccessController.doPrivileged(Native Method) [na:na]
+	at java.base/javax.security.auth.Subject.doAs(Unknown Source) [na:na]
+	at org.apache.qpid.server.configuration.updater.TaskExecutorImpl$CallableWrapper.call(TaskExecutorImpl.java:335) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source) [na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) [na:na]
+Caused by: java.lang.IllegalArgumentException: Cannot convert string '<your_port>' to an integer
+	at org.apache.qpid.server.model.AttributeValueConverter$8.convert(AttributeValueConverter.java:280) ~[qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.model.AttributeValueConverter$8.convert(AttributeValueConverter.java:258) ~[qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.model.ConfiguredObjectMethodAttribute.convert(ConfiguredObjectMethodAttribute.java:65) ~[qpid-broker-core-6.0.2.jar:6.0.2]
+	... 47 common frames omitted
+Caused by: java.lang.NumberFormatException: For input string: "<your_port>"
+	at java.base/java.lang.NumberFormatException.forInputString(Unknown Source) ~[na:na]
+	at java.base/java.lang.Integer.parseInt(Unknown Source) ~[na:na]
+	at java.base/java.lang.Integer.valueOf(Unknown Source) ~[na:na]
+	at org.apache.qpid.server.model.AttributeValueConverter$8.convert(AttributeValueConverter.java:276) ~[qpid-broker-core-6.0.2.jar:6.0.2]
+	... 49 common frames omitted
+2018-07-16 14:26:37,467 INFO  [Broker-Config] (q.m.b.config) - [Broker] BRK-1006 : Using configuration : C:\Users\Likhitha.batthula\eclipse\LiveFeedBI\work\config.json
+2018-07-16 14:26:37,513 INFO  [Broker-Config] (q.m.b.startup) - [Broker] BRK-1001 : Startup : Version: 6.0.2 Build: 1738920
+2018-07-16 14:26:37,562 INFO  [Broker-Config] (q.m.b.platform) - [Broker] BRK-1010 : Platform : JVM : Oracle Corporation version: 10.0.1+10 OS : Windows 10 version: 10.0 arch: amd64 cores: 4
+2018-07-16 14:26:37,562 INFO  [Broker-Config] (q.m.b.max_memory) - [Broker] BRK-1011 : Maximum Memory : Heap : 4,263,510,016 bytes Direct : 4,263,510,016 bytes
+2018-07-16 14:26:37,562 INFO  [Broker-Config] (q.m.b.process) - [Broker] BRK-1017 : Process : PID : 4476
+2018-07-16 14:26:37,562 ERROR [Broker-Config] (o.a.q.s.m.AbstractConfiguredObject) - Failed to open object with name 'passwordFile'.  Object will be put into ERROR state.
+org.apache.qpid.server.configuration.IllegalConfigurationException: Exception opening password database: Cannot find password file ${qpid.home_dir}\etc\passwd
+	at org.apache.qpid.server.security.auth.manager.PrincipalDatabaseAuthenticationManager.initialise(PrincipalDatabaseAuthenticationManager.java:188) ~[qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.security.auth.manager.PrincipalDatabaseAuthenticationManager.onOpen(PrincipalDatabaseAuthenticationManager.java:155) ~[qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.model.AbstractConfiguredObject.doOpening(AbstractConfiguredObject.java:928) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.model.AbstractConfiguredObject$9.performAction(AbstractConfiguredObject.java:940) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.model.AbstractConfiguredObject$9.performAction(AbstractConfiguredObject.java:931) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.model.AbstractConfiguredObject.applyToChildren(AbstractConfiguredObject.java:1055) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.model.AbstractConfiguredObject.doOpening(AbstractConfiguredObject.java:930) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.model.AbstractConfiguredObject$1.execute(AbstractConfiguredObject.java:472) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.model.AbstractConfiguredObject$1.execute(AbstractConfiguredObject.java:460) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.model.AbstractConfiguredObject$2.execute(AbstractConfiguredObject.java:521) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.model.AbstractConfiguredObject$2.execute(AbstractConfiguredObject.java:514) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.configuration.updater.TaskExecutorImpl$TaskLoggingWrapper.execute(TaskExecutorImpl.java:270) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.configuration.updater.TaskExecutorImpl.submitWrappedTask(TaskExecutorImpl.java:154) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.configuration.updater.TaskExecutorImpl.submit(TaskExecutorImpl.java:142) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.model.AbstractConfiguredObject.doOnConfigThread(AbstractConfiguredObject.java:513) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.model.AbstractConfiguredObject.openAsync(AbstractConfiguredObject.java:459) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.model.AbstractSystemConfig.activate(AbstractSystemConfig.java:237) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+	at org.apache.qpid.server.model.AbstractConfiguredObject.attainState(AbstractConfiguredObject.java:1254) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.model.AbstractConfiguredObject.attainState(AbstractConfiguredObject.java:1233) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.model.AbstractConfiguredObject$8.onSuccess(AbstractConfiguredObject.java:868) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.model.AbstractConfiguredObject$8.onSuccess(AbstractConfiguredObject.java:862) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at com.google.common.util.concurrent.Futures$6.run(Futures.java:1319) [guava-18.0.jar:na]
+	at com.google.common.util.concurrent.MoreExecutors$DirectExecutor.execute(MoreExecutors.java:457) [guava-18.0.jar:na]
+	at com.google.common.util.concurrent.ExecutionList.executeListener(ExecutionList.java:156) [guava-18.0.jar:na]
+	at com.google.common.util.concurrent.ExecutionList.add(ExecutionList.java:101) [guava-18.0.jar:na]
+	at com.google.common.util.concurrent.AbstractFuture.addListener(AbstractFuture.java:170) [guava-18.0.jar:na]
+	at com.google.common.util.concurrent.Futures.addCallback(Futures.java:1322) [guava-18.0.jar:na]
+	at com.google.common.util.concurrent.Futures.addCallback(Futures.java:1258) [guava-18.0.jar:na]
+	at org.apache.qpid.server.model.AbstractConfiguredObject.doAttainState(AbstractConfiguredObject.java:861) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.model.AbstractConfiguredObject.access$300(AbstractConfiguredObject.java:78) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.model.AbstractConfiguredObject$1.execute(AbstractConfiguredObject.java:473) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.model.AbstractConfiguredObject$1.execute(AbstractConfiguredObject.java:460) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.model.AbstractConfiguredObject$2.execute(AbstractConfiguredObject.java:521) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.model.AbstractConfiguredObject$2.execute(AbstractConfiguredObject.java:514) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.configuration.updater.TaskExecutorImpl$TaskLoggingWrapper.execute(TaskExecutorImpl.java:270) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.configuration.updater.TaskExecutorImpl$CallableWrapper$1.run(TaskExecutorImpl.java:342) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at java.base/java.security.AccessController.doPrivileged(Native Method) [na:na]
+	at java.base/javax.security.auth.Subject.doAs(Unknown Source) [na:na]
+	at org.apache.qpid.server.configuration.updater.TaskExecutorImpl$CallableWrapper.call(TaskExecutorImpl.java:335) [qpid-broker-core-6.0.2.jar:6.0.2]
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source) [na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source) [na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) [na:na]
+	at java.base/java.lang.Thread.run(Unknown Source) [na:na]
+Caused by: java.io.FileNotFoundException: Cannot find password file ${qpid.home_dir}\etc\passwd
+	at org.apache.qpid.server.security.auth.database.AbstractPasswordFilePrincipalDatabase.open(AbstractPasswordFilePrincipalDatabase.java:62) ~[qpid-broker-core-6.0.2.jar:6.0.2]
+	at org.apache.qpid.server.security.auth.manager.PrincipalDatabaseAuthenticationManager.initialise(PrincipalDatabaseAuthenticationManager.java:184) ~[qpid-broker-core-6.0.2.jar:6.0.2]
+	... 46 common frames omitted
+2018-07-16 14:26:37,667 INFO  [Broker-Config] (q.m.c.created) - [Broker] [vh(/default)/ms(JsonFileConfigStore)] CFG-1001 : Created
+2018-07-16 14:26:37,667 INFO  [Broker-Config] (q.m.c.store_location) - [Broker] [vh(/default)/ms(JsonFileConfigStore)] CFG-1002 : Store location : C:\Users\Likhitha.batthula\eclipse\LiveFeedBI\work\default\config\
+2018-07-16 14:26:37,668 INFO  [Broker-Config] (q.m.c.recovery_start) - [Broker] [vh(/default)/ms(JsonFileConfigStore)] CFG-1004 : Recovery Start
+2018-07-16 14:26:37,672 INFO  [Broker-Config] (o.a.q.s.s.GenericStoreUpgrader) - VirtualHost store has model version 6.0. Number of record(s) 5
+2018-07-16 14:26:37,679 INFO  [Broker-Config] (q.m.v.created) - [Broker] VHT-1001 : Created : default
+2018-07-16 14:26:37,686 INFO  [Broker-Config] (q.m.c.recovery_complete) - [Broker] [vh(/default)/ms(JsonFileConfigStore)] CFG-1005 : Recovery Complete
+2018-07-16 14:26:37,695 INFO  [Broker-Config] (q.m.m.startup) - [Broker] MNG-1001 : Web Management Startup
+2018-07-16 14:26:37,713 INFO  [VirtualHostNode-default-Config] (q.m.e.created) - [Broker] EXH-1001 : Create : Durable Type: headers Name: amq.match
+2018-07-16 14:26:37,713 INFO  [VirtualHostNode-default-Config] (q.m.e.created) - [Broker] EXH-1001 : Create : Durable Type: fanout Name: amq.fanout
+2018-07-16 14:26:37,713 INFO  [VirtualHostNode-default-Config] (q.m.e.created) - [Broker] EXH-1001 : Create : Durable Type: direct Name: amq.direct
+2018-07-16 14:26:37,713 INFO  [VirtualHostNode-default-Config] (q.m.e.created) - [Broker] EXH-1001 : Create : Durable Type: topic Name: amq.topic
+2018-07-16 14:26:37,974 INFO  [Broker-Config] (q.m.m.listening) - [Broker] MNG-1002 : Starting : HTTP : Listening on TCP port 8080
+2018-07-16 14:26:37,974 INFO  [Broker-Config] (q.m.m.ready) - [Broker] MNG-1004 : Web Management Ready
+2018-07-16 14:26:38,135 WARN  [VirtualHostNode-default-Config] (DERBY) - os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+
+2018-07-16 14:26:39,347 INFO  [VirtualHostNode-default-Config] (q.m.m.created) - [Broker] [vh(/default)/ms(DerbyMessageStore)] MST-1001 : Created
+2018-07-16 14:26:39,347 INFO  [VirtualHostNode-default-Config] (q.m.m.store_location) - [Broker] [vh(/default)/ms(DerbyMessageStore)] MST-1002 : Store location : C:\Users\Likhitha.batthula\eclipse\LiveFeedBI\work\default\messages
+2018-07-16 14:26:39,357 INFO  [VirtualHostNode-default-Config] (q.m.m.recovery_start) - [Broker] [vh(/default)/ms(DerbyMessageStore)] MST-1004 : Recovery Start
+2018-07-16 14:26:39,366 INFO  [VirtualHostNode-default-Config] (q.m.t.recovery_start) - [Broker] [vh(/default)/ms(DerbyMessageStore)] TXN-1004 : Recovery Start
+2018-07-16 14:26:39,378 INFO  [VirtualHostNode-default-Config] (q.m.t.recovery_complete) - [Broker] [vh(/default)/ms(DerbyMessageStore)] TXN-1006 : Recovery Complete
+2018-07-16 14:26:39,378 INFO  [VirtualHostNode-default-Config] (q.m.m.recovered) - [Broker] [vh(/default)/ms(DerbyMessageStore)] MST-1005 : Recovered 0 messages
+2018-07-16 14:26:39,378 INFO  [VirtualHostNode-default-Config] (q.m.m.recovery_complete) - [Broker] [vh(/default)/ms(DerbyMessageStore)] MST-1006 : Recovery Complete
+2018-07-16 14:26:39,386 WARN  [Broker-Config] (o.a.q.s.m.a.BrokerAdapter) - Broker child object 'AMQP' of type 'Port' is ERRORED
+2018-07-16 14:26:39,388 WARN  [Broker-Config] (o.a.q.s.m.a.BrokerAdapter) - Broker child object 'passwordFile' of type 'AuthenticationProvider' is ERRORED
+2018-07-16 14:26:39,389 INFO  [Broker-Config] (q.m.b.ready) - [Broker] BRK-1004 : Qpid Broker Ready
+2018-07-16 14:26:39,429 INFO  [Broker-Config] (q.m.m.shutting_down) - <<UNKNOWN>> MNG-1003 : Shutting down : HTTP : port 8080
+2018-07-16 14:26:39,498 WARN  [VirtualHostNode-default-Config] (DERBY) - Mon Jul 16 14:26:39 CDT 2018:
+Shutting down instance a816c00e-0164-a48f-1540-00000d432158 on database directory C:\Users\Likhitha.batthula\eclipse\LiveFeedBI\work\default\messages\default with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@6fa13e27 
+
+2018-07-16 14:26:39,650 INFO  [Broker-Config] (q.m.m.stopped) - <<UNKNOWN>> MNG-1005 : Web Management Stopped
+2018-07-16 14:26:39,866 INFO  [VirtualHostNode-default-Config] (q.m.m.closed) - <<UNKNOWN>> [vh(/default)/ms(DerbyMessageStore)] MST-1003 : Closed
+2018-07-16 14:26:39,877 INFO  [VirtualHostNode-default-Config] (q.m.v.closed) - <<UNKNOWN>> VHT-1002 : Closed : default
+2018-07-16 14:26:39,879 INFO  [Broker-Config] (q.m.c.close) - <<UNKNOWN>> [vh(/default)/ms(JsonFileConfigStore)] CFG-1003 : Closed
+2018-07-16 14:26:39,880 INFO  [Broker-Config] (q.m.b.stopped) - <<UNKNOWN>> BRK-1005 : Stopped

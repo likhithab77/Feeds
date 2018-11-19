@@ -1,0 +1,8 @@
+<!-- <?xml version="1.0" encoding="UTF-8"?>
+<suite name="Rest Api Tests" parallel="tests" thread-count="70">
+	     <test name="B2BEUAPI" parallel="instances" thread-count="2">
+		<classes>
+			<class name="com.BITest.Receiver.java" />
+		</classes>
+	</test>  	  
+ </suite> -->

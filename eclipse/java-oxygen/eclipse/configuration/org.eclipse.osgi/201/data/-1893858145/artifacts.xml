@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?artifactRepository version='1.1.0'?>
+<repository name='update site: https://bitbucket.org/denmiroch/jsontools/raw/ae2e9d683249ef989d940b441e00b74df729164c/JsonSite/site.xml' type='org.eclipse.equinox.p2.artifact.repository.simpleRepository' version='1'>
+  <properties size='3'>
+    <property name='p2.timestamp' value='1532450947061'/>
+    <property name='eclipse.p2.force.threading' value='true'/>
+    <property name='site.checksum' value='4200622379'/>
+  </properties>
+  <mappings size='3'>
+    <rule filter='(&amp; (classifier=osgi.bundle))' output='${repoUrl}/plugins/${id}_${version}.jar'/>
+    <rule filter='(&amp; (classifier=binary))' output='${repoUrl}/binary/${id}_${version}'/>
+    <rule filter='(&amp; (classifier=org.eclipse.update.feature))' output='${repoUrl}/features/${id}_${version}.jar'/>
+  </mappings>
+  <artifacts size='2'>
+    <artifact classifier='org.eclipse.update.feature' id='org.sweetlemonade.eclipse.json.feature' version='1.1.0'>
+      <repositoryProperties size='1'>
+        <property name='artifact.reference' value='https://bitbucket.org/denmiroch/jsontools/raw/ae2e9d683249ef989d940b441e00b74df729164c/JsonSite/features/org.sweetlemonade.eclipse.json.feature_1.1.0.jar'/>
+      </repositoryProperties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='org.sweetlemonade.eclipse.json' version='1.1.0'>
+      <repositoryProperties size='1'>
+        <property name='artifact.reference' value='https://bitbucket.org/denmiroch/jsontools/raw/ae2e9d683249ef989d940b441e00b74df729164c/JsonSite/plugins/org.sweetlemonade.eclipse.json_1.1.0.jar'/>
+      </repositoryProperties>
+    </artifact>
+  </artifacts>
+</repository>
